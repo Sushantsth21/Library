@@ -29,7 +29,6 @@ function addBookToLibrary() {
         const newBook = new Book(author, title, numPages, read, index);
         myLibrary.push(newBook);
 
-        dialog.close();
         displayBooks(newBook);
     });
 }
@@ -100,6 +99,7 @@ const closeButton = document.querySelector("dialog button");
 // "Show the dialog" button opens the dialog modally
 showButton.addEventListener("click", () => {
   dialog.showModal();
+  addBookToLibrary();
 });
 
 // "Close" button closes the dialog
